@@ -30,8 +30,10 @@ var mySqrt = function(x) {
 
 // Solution without Sqrt():
 
-var mySqrt = function(x) {
-    return Math.floor(Math.sqrt(x))
+const mySqrt = function(x) {
+    let result = 1;
+    while (result*result <= x) result++;
+    return result - 1;
 };
 
 
