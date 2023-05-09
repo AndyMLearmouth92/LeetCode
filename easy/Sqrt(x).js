@@ -26,8 +26,16 @@ Starter code:
 var mySqrt = function(x) {
     
 };
+*/
 
-Solution without Sqrt():
+// Solution without Sqrt():
+
+var mySqrt = function(x) {
+    return Math.floor(Math.sqrt(x))
+};
+
+
+// Solution using Sqrt():
 
 var mySqrt = function(x) {
     return Math.floor(Math.sqrt(x))
