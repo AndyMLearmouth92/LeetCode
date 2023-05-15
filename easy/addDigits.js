@@ -41,3 +41,9 @@ var addDigits = function(num) {
         }    
         return num;
     };
+
+// Solution 2:
+
+var addDigits = function(num) {
+    return (num - 1) % 9 + 1;
+};
