@@ -27,10 +27,31 @@ var containsDuplicate = function(nums) {
 */
 
 
-// Solution:
+// Solution 1:
 
 var containsDuplicate = function(nums) {
     let removedDupes = [...new Set(nums)]
     return removedDupes.length !== nums.length
 };
+
+// Solution 2:
+
+var containsDuplicate = function(nums) {
+    let map = {}
+    for(let element in nums){
+        if(!map[nums[element]]){
+            map[nums[element]] = 1
+        }else{
+            map[nums[element]]++
+        }
+    }
+    for (let element in map) {
+        if (map[element] > 1) {
+            return true
+        }
+    }
+  return false
+};
+
+
 
