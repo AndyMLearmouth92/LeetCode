@@ -33,7 +33,7 @@ var fib = function(n) {
 };
 */
 
-// Solution:
+// Solution 1:
 
 var fib = function (num) {
   let a = 1,
@@ -48,3 +48,19 @@ var fib = function (num) {
   }
   return b;
 };
+
+// Solution 2:
+
+var fib = function(num) {
+    let result = [0, 1]
+    if(num < 1){
+        return 0
+    }else{
+        for(let i = 2; i <= num; i++){
+            result.push(result[i-1] + result[i-2])
+    }
+ }
+return result[result.length-1]
+};
+
+
