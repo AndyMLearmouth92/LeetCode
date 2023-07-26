@@ -33,7 +33,7 @@ var fib = function(n) {
 };
 */
 
-// Solution 1:
+// Solution 1 while loop:
 
 var fib = function (num) {
   let a = 1,
@@ -49,7 +49,7 @@ var fib = function (num) {
   return b;
 };
 
-// Solution 2:
+// Solution 2 for loop:
 
 var fib = function(num) {
     let result = [0, 1]
@@ -63,7 +63,7 @@ var fib = function(num) {
 return result[result.length-1]
 };
 
-// Solution 3:
+// Solution 3 Recursion:
 
 var fib = function(n) {
     if(n < 2){
@@ -72,6 +72,21 @@ var fib = function(n) {
         return fib(n-1) + fib(n-2)
     }
 };
+
+// Solution 4 Memoization:
+
+var fib = function(n) {
+    if(n === 0 || n === 1){
+        return n
+    }else if(memo[n]){
+        return memo[n]
+    }else{
+        var result = fib(n-1) + fib(n-2)
+        memo[n] = result
+        return result
+    }
+};
+
 
 
 
