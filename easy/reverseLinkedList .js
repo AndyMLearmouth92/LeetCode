@@ -44,3 +44,15 @@ var reverseList = function (head) {
   head = prevNode;
   return head;
 };
+
+// Solution 2:
+
+var reverseList = function (head) {
+  if (head === null || head.next === null) {
+    return head;
+  }
+  let reversedHead = reverseList(head.next);
+  head.next.next = head;
+  head.next = null;
+  return reversedHead;
+};
