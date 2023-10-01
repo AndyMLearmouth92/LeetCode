@@ -54,3 +54,12 @@ var rotate = function (nums, k) {
 
   return nums;
 };
+
+//Solution not accepted for being too slow
+
+var rotate = function (nums, k) {
+  for (let i = 0; i < k; i++) {
+    nums.unshift(nums.pop());
+  }
+  return nums;
+};
