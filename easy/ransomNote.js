@@ -40,3 +40,24 @@ var canConstruct = function (ransomNote, magazine) {
     return false;
   }
 };
+
+// Solution 2:
+
+var canConstruct = function (ransomNote, magazine) {
+  let map = {};
+  for (let char of magazine) {
+    if (map[char]) {
+      map[char]++;
+    } else {
+      map[char] = 1;
+    }
+  }
+  for (let char of ransomNote) {
+    if (map[char] === 0 || !map[char]) {
+      return false;
+    } else {
+      map[char]--;
+    }
+  }
+  return true;
+};
