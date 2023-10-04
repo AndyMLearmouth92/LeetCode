@@ -46,3 +46,9 @@ const reverseWords = (s) =>
     .filter((e) => e.trim())
     .reverse()
     .join(" ");
+
+// Solution 2:
+
+var reverseWords = function (s) {
+  return s.trim().split(/\s+/).reverse().join(" ");
+};
