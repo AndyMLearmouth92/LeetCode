@@ -41,3 +41,11 @@ var isAnagram = function(s, t) {
     }
     return true
 };
+
+// Solution 2:
+
+var isAnagram = function(s, t) {
+    let firstWord = s.split('').sort().join('')
+    let secondWord = t.split('').sort().join('')
+    return firstWord === secondWord
+};
