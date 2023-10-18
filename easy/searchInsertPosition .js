@@ -39,3 +39,7 @@ var searchInsert = function(nums, target) {
         return [...nums, target].sort((a,b) => a-b).indexOf(target)
     }
 };
+
+// Solution 2:
+
+var searchInsert = (nums, target) => nums.indexOf(target) === -1 ? nums.push(target).sortedArr = nums.sort((a,b) => a-b).indexOf(target) : nums.indexOf(target)
