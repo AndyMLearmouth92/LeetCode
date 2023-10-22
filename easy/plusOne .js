@@ -43,3 +43,19 @@ var plusOne = function(digits) {
 var plusOne = function(digits) {
     return (BigInt(digits.join(''))+BigInt(1)).toString().split('')
 };
+
+// Solution 2:
+
+var plusOne = function(digits) {
+
+    for(let i = digits.length - 1; i >= 0; i--) {
+        if(digits[i] === 9) {
+            digits[i] = 0
+        }
+        else {
+            digits[i] += 1
+            return digits
+        }
+    }
+    return [1, ...digits]
+};
