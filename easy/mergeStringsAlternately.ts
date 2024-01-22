@@ -42,7 +42,24 @@ function mergeAlternately(word1: string, word2: string): string {
 
 */
 
-// Solution 1: One pointer
+// Solution 1: Two pointer
+
+function mergeAlternately(word1: string, word2: string): string {
+  let result: string[] = [];
+  let i: number = 0;
+  let j: number = 0;
+  while (i < word1.length && j < word2.length) {
+    result.push(word1[i]);
+    result.push(word2[j]);
+    i++;
+    j++;
+  }
+  result.push(word1.slice(i));
+  result.push(word2.slice(j));
+  return result.join("");
+}
+
+// Solution 2: One pointer
 
 function mergeAlternately(word1: string, word2: string): string {
   let result: string[] = [];
