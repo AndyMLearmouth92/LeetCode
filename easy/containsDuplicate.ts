@@ -45,3 +45,22 @@ function containsDuplicate(nums: number[]): boolean {
 function containsDuplicate(nums: number[]): boolean {
   return new Set(nums).size < nums.length;
 }
+
+// Solution 2:
+
+function containsDuplicate(nums: number[]): boolean {
+  let map = {};
+  for (let i = 0; i < nums.length; i++) {
+    if (!map[nums[i]]) {
+      map[nums[i]] = 1;
+    } else {
+      map[nums[i]]++;
+    }
+  }
+  for (let item in map) {
+    if (map[item] > 1) {
+      return true;
+    }
+  }
+  return false;
+}
