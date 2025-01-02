@@ -39,3 +39,9 @@ function getConcatenation(nums: number[]): number[] {
 var getConcatenation = function (nums) {
   return nums.concat(nums);
 };
+
+// Solution 2:
+
+var getConcatenation = function (nums) {
+  return [...nums, ...nums];
+};
