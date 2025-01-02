@@ -35,7 +35,36 @@ function isPalindrome(s: string): boolean {
 
 */
 
-// Solution 1: Reverse string
+// Solution 1: Two pointer
+
+function isAlphaNumeric(char) {
+  return (
+    (char >= "A" && char <= "Z") ||
+    (char >= "a" && char <= "z") ||
+    (char >= "0" && char <= "9")
+  );
+}
+
+function isPalindrome(s: string): boolean {
+  let front: number = 0;
+  let back: number = s.length - 1;
+  while (front < back) {
+    while (front < back && !isAlphaNumeric(s[front])) {
+      front++;
+    }
+    while (back > front && !isAlphaNumeric(s[back])) {
+      back--;
+    }
+    if (s[front].toLowerCase() !== s[back].toLowerCase()) {
+      return false;
+    }
+    front++;
+    back--;
+  }
+  return true;
+}
+
+// Solution 2: Reverse string
 
 function isAlphaNumeric(char) {
   return (
