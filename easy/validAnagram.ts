@@ -34,3 +34,32 @@ function isAnagram(s: string, t: string): boolean {
   const secondWord = t.split("").sort().join("");
   return firstWord === secondWord;
 }
+
+// Solution 2:
+
+function isAnagram(s: string, t: string): boolean {
+  if (s.length !== t.length) return false;
+
+  let charMap: { [key: string]: number } = {};
+
+  for (let i = 0; i < s.length; i++) {
+    if (!charMap[s[i]]) {
+      charMap[s[i]] = 1;
+    } else {
+      charMap[s[i]]++;
+    }
+    if (!charMap[t[i]]) {
+      charMap[t[i]] = -1;
+    } else {
+      charMap[t[i]]--;
+    }
+  }
+
+  for (let key in charMap) {
+    if (charMap[key] !== 0) {
+      return false;
+    }
+  }
+
+  return true;
+}
