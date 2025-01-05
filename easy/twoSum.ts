@@ -41,6 +41,22 @@ function twoSum(nums: number[], target: number): number[] {
 // Solution 1:
 
 function twoSum(nums: number[], target: number): number[] {
+  const indices: { [key: number]: number } = {};
+  for (let i = 0; i < nums.length; i++) {
+    indices[nums[i]] = i;
+  }
+  for (let i = 0; i < nums.length; i++) {
+    let difference = target - nums[i];
+    if (indices[difference] !== undefined && indices[difference] !== i) {
+      return [i, indices[difference]];
+    }
+  }
+  return [];
+}
+
+// Solution 2:
+
+function twoSum(nums: number[], target: number): number[] {
   for (let i = 0; i < nums.length; i++) {
     for (let j = i + 1; j < nums.length; j++) {
       if (nums[i] + nums[j] === target) {
