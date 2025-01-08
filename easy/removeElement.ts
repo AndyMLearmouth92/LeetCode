@@ -52,6 +52,19 @@ function removeElement(nums: number[], val: number): number {
 // Solution 1:
 
 function removeElement(nums: number[], val: number): number {
+  let k: number = 0;
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] !== val) {
+      nums[k] = nums[i];
+      k++;
+    }
+  }
+  return k;
+}
+
+// Solution 2:
+
+function removeElement(nums: number[], val: number): number {
   for (let i = 0; i < nums.length; i++) {
     if (nums[i] === val) {
       nums.splice(i, 1);
@@ -61,7 +74,7 @@ function removeElement(nums: number[], val: number): number {
   return nums.length;
 }
 
-// Solution 2:
+// Solution 3:
 
 function removeElement(nums: number[], val: number): number {
   let tempArr: number[] = [];
