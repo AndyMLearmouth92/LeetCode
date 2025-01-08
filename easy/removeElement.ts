@@ -60,3 +60,18 @@ function removeElement(nums: number[], val: number): number {
   }
   return nums.length;
 }
+
+// Solution 2:
+
+function removeElement(nums: number[], val: number): number {
+  let tempArr: number[] = [];
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] !== val) {
+      tempArr.push(nums[i]);
+    }
+  }
+  for (let j = 0; j < tempArr.length; j++) {
+    nums[j] = tempArr[j];
+  }
+  return tempArr.length;
+}
