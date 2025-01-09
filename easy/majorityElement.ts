@@ -41,3 +41,28 @@ function majorityElement(nums: number[]): number {
   }
   return res;
 }
+
+// Solution 2:
+
+function majorityElement(nums: number[]): number {
+  const hashMap: { [key: number]: number } = {};
+
+  for (let i = 0; i < nums.length; i++) {
+    if (hashMap.hasOwnProperty(nums[i])) {
+      hashMap[nums[i]]++;
+    } else {
+      hashMap[nums[i]] = 1;
+    }
+  }
+
+  let mostCommonElement: number = -1;
+  let maxCount: number = 0;
+  for (const [key, value] of Object.entries(hashMap)) {
+    const numKey = parseInt(key);
+    if (value > maxCount) {
+      maxCount = value;
+      mostCommonElement = numKey;
+    }
+  }
+  return mostCommonElement;
+}
