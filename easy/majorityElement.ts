@@ -66,3 +66,20 @@ function majorityElement(nums: number[]): number {
   }
   return mostCommonElement;
 }
+
+// Solution 3:
+
+function majorityElement(nums: number[]): number {
+  for (let i = 0; i < nums.length; i++) {
+    let count: number = 0;
+    for (let j = 0; j < nums.length; j++) {
+      if (nums[i] === nums[j]) {
+        count++;
+      }
+    }
+    if (count > nums.length / 2) {
+      return nums[i];
+    }
+  }
+  return -1;
+}
