@@ -56,6 +56,27 @@ class MyHashSet {
 // Solution 1:
 
 class MyHashSet {
+  data: boolean[];
+  constructor() {
+    this.data = new Array(1000001).fill(false);
+  }
+
+  add(key: number): void {
+    this.data[key] = true;
+  }
+
+  remove(key: number): void {
+    this.data[key] = false;
+  }
+
+  contains(key: number): boolean {
+    return this.data[key];
+  }
+}
+
+// Solution 2:
+
+class MyHashSet {
   data: number[];
   constructor() {
     this.data = [];
