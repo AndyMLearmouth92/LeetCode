@@ -36,8 +36,8 @@ function getConcatenation(nums: number[]): number[] {
 // Solution 1:
 
 function getConcatenation(nums: number[]): number[] {
-  let n = nums.length;
-  let ans = new Array(2 * n);
+  let n: number = nums.length;
+  let ans: number[] = new Array(2 * n);
 
   for (let i = 0; i < n; i++) {
     ans[i] = ans[i + n] = nums[i];
@@ -61,4 +61,10 @@ function getConcatenation(nums: number[]): number[] {
 
 function getConcatenation(nums: number[]): number[] {
   return nums.concat(nums);
+}
+
+// Solution 4:
+
+function getConcatenation(nums: number[]): number[] {
+  return [...nums, ...nums];
 }
