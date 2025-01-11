@@ -36,6 +36,18 @@ function getConcatenation(nums: number[]): number[] {
 // Solution 1:
 
 function getConcatenation(nums: number[]): number[] {
+  let n = nums.length;
+  let ans = new Array(2 * n);
+
+  for (let i = 0; i < n; i++) {
+    ans[i] = ans[i + n] = nums[i];
+  }
+  return ans;
+}
+
+// Solution 2:
+
+function getConcatenation(nums: number[]): number[] {
   let ans: number[] = [];
   for (let i = 0; i < 2; i++) {
     for (let i = 0; i < nums.length; i++) {
