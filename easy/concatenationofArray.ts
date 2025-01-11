@@ -56,3 +56,9 @@ function getConcatenation(nums: number[]): number[] {
   }
   return ans;
 }
+
+// Solution 3:
+
+function getConcatenation(nums: number[]): number[] {
+  return nums.concat(nums);
+}
