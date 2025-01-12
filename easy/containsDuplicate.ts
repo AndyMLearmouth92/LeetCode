@@ -49,7 +49,21 @@ function containsDuplicate(nums: number[]): boolean {
 // Solution 2:
 
 function containsDuplicate(nums: number[]): boolean {
-  let map = {};
+  let hash = new Set();
+  for (let num of nums) {
+    if (hash.has(num)) {
+      return true;
+    } else {
+      hash.add(num);
+    }
+  }
+  return false;
+}
+
+// Solution 3:
+
+function containsDuplicate(nums: number[]): boolean {
+  let map: { [key: string]: number } = {};
   for (let i = 0; i < nums.length; i++) {
     if (!map[nums[i]]) {
       map[nums[i]] = 1;
@@ -65,7 +79,7 @@ function containsDuplicate(nums: number[]): boolean {
   return false;
 }
 
-// Solution 3:
+// Solution 4:
 
 function containsDuplicate(nums: number[]): boolean {
   let hashMap: { [key: string]: number } = {};
@@ -84,7 +98,7 @@ function containsDuplicate(nums: number[]): boolean {
   return false;
 }
 
-// Solution 4: Too slow to pass as it times out on LC but it would work given more time
+// Solution 5: Too slow to pass as it times out on LC but it would work given more time
 
 function containsDuplicate(nums: number[]): boolean {
   for (let i = 0; i < nums.length; i++) {
