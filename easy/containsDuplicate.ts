@@ -65,7 +65,26 @@ function containsDuplicate(nums: number[]): boolean {
   return false;
 }
 
-// Solution 3: Too slow to pass as it times out on LC but it would work given more time
+// Solution 3:
+
+function containsDuplicate(nums: number[]): boolean {
+  let hashMap: { [key: string]: number } = {};
+  for (let num of nums) {
+    if (!hashMap[num]) {
+      hashMap[num] = 1;
+    } else {
+      hashMap[num]++;
+    }
+  }
+  for (const [key, value] of Object.entries(hashMap)) {
+    if (value > 1) {
+      return true;
+    }
+  }
+  return false;
+}
+
+// Solution 4: Too slow to pass as it times out on LC but it would work given more time
 
 function containsDuplicate(nums: number[]): boolean {
   for (let i = 0; i < nums.length; i++) {
