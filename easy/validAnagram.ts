@@ -83,3 +83,25 @@ function isAnagram(s: string, t: string): boolean {
 
   return counts.every((c) => c === 0);
 }
+
+// Solution 4:
+
+function isAnagram(s: string, t: string): boolean {
+  if (s.length !== t.length) {
+    return false;
+  }
+  let firstMap: { [key: string]: number } = {};
+  let secondMap: { [key: string]: number } = {};
+
+  for (let i = 0; i < s.length; i++) {
+    firstMap[s[i]] = (firstMap[s[i]] || 0) + 1;
+    secondMap[t[i]] = (secondMap[t[i]] || 0) + 1;
+  }
+
+  for (let key in firstMap) {
+    if (firstMap[key] !== secondMap[key]) {
+      return false;
+    }
+  }
+  return true;
+}
