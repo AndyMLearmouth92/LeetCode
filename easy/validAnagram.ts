@@ -30,6 +30,10 @@ function isAnagram(s: string, t: string): boolean {
 // Solution 1:
 
 function isAnagram(s: string, t: string): boolean {
+  if (s.length !== t.length) {
+    return false;
+  }
+
   const firstWord = s.split("").sort().join("");
   const secondWord = t.split("").sort().join("");
   return firstWord === secondWord;
