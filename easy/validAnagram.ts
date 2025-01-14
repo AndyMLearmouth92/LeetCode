@@ -90,16 +90,15 @@ function isAnagram(s: string, t: string): boolean {
   if (s.length !== t.length) {
     return false;
   }
-  let firstMap: { [key: string]: number } = {};
-  let secondMap: { [key: string]: number } = {};
+  let hashMap: { [key: string]: number } = {};
 
   for (let i = 0; i < s.length; i++) {
-    firstMap[s[i]] = (firstMap[s[i]] || 0) + 1;
-    secondMap[t[i]] = (secondMap[t[i]] || 0) + 1;
+    hashMap[s[i]] = (hashMap[s[i]] || 0) + 1;
+    hashMap[t[i]] = (hashMap[t[i]] || 0) - 1;
   }
 
-  for (let key in firstMap) {
-    if (firstMap[key] !== secondMap[key]) {
+  for (let key in hashMap) {
+    if (hashMap[key] !== 0) {
       return false;
     }
   }
