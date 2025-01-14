@@ -104,3 +104,25 @@ function isAnagram(s: string, t: string): boolean {
   }
   return true;
 }
+
+// Solution 5:
+
+function isAnagram(s: string, t: string): boolean {
+  if (s.length !== t.length) {
+    return false;
+  }
+
+  let hashMap: { [key: string]: number } = {};
+
+  for (const char of s) {
+    hashMap[char] = (hashMap[char] || 0) + 1;
+  }
+
+  for (const char of t) {
+    if (!hashMap[char]) {
+      return false;
+    }
+    hashMap[char]--;
+  }
+  return true;
+}
