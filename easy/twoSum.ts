@@ -41,6 +41,21 @@ function twoSum(nums: number[], target: number): number[] {
 // Solution 1:
 
 function twoSum(nums: number[], target: number): number[] {
+  let hashMap = new Map<number, number>();
+
+  for (let i = 0; i < nums.length; i++) {
+    let diff = target - nums[i];
+    if (hashMap.has(diff)) {
+      return [hashMap.get(diff), i];
+    }
+    hashMap.set(nums[i], i);
+  }
+  return [];
+}
+
+// Solution 2:
+
+function twoSum(nums: number[], target: number): number[] {
   const indices: { [key: number]: number } = {};
   for (let i = 0; i < nums.length; i++) {
     indices[nums[i]] = i;
@@ -54,7 +69,7 @@ function twoSum(nums: number[], target: number): number[] {
   return [];
 }
 
-// Solution 2:
+// Solution 3:
 
 function twoSum(nums: number[], target: number): number[] {
   for (let i = 0; i < nums.length; i++) {
