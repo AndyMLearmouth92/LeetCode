@@ -55,3 +55,17 @@ function longestCommonPrefix(strs: string[]): string {
   }
   return strs[0];
 }
+
+// Solution 3:
+
+function longestCommonPrefix(strs: string[]): string {
+  let prefix = strs[0];
+  for (let i = 0; i < prefix.length; i++) {
+    for (let j = 1; j < strs.length; j++) {
+      if (prefix[i] !== strs[j][i]) {
+        return prefix.slice(0, i);
+      }
+    }
+  }
+  return prefix;
+}
