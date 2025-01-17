@@ -27,7 +27,7 @@ function majorityElement(nums: number[]): number {
 };
 */
 
-// Solution 1:
+// Solution 1: Boyer-Moore Voting Algorithm
 
 function majorityElement(nums: number[]): number {
   let res: number = 0;
@@ -42,7 +42,14 @@ function majorityElement(nums: number[]): number {
   return res;
 }
 
-// Solution 2:
+// Solution 2: Sorting
+
+function majorityElement(nums: number[]): number {
+  let sortedNums: number[] = nums.sort();
+  return sortedNums[Math.floor(nums.length / 2)];
+}
+
+// Solution 3: Hash map using a JS object
 
 function majorityElement(nums: number[]): number {
   const hashMap: { [key: number]: number } = {};
@@ -67,7 +74,7 @@ function majorityElement(nums: number[]): number {
   return mostCommonElement;
 }
 
-// Solution 3:
+// Solution 4: Brute force loop within a loop
 
 function majorityElement(nums: number[]): number {
   for (let i = 0; i < nums.length; i++) {

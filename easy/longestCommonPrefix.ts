@@ -56,7 +56,7 @@ function longestCommonPrefix(strs: string[]): string {
   return strs[0];
 }
 
-// Solution 3:
+// Solution 3 Horizontal scanning but with two for loops:
 
 function longestCommonPrefix(strs: string[]): string {
   let prefix = strs[0];

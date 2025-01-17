@@ -52,6 +52,22 @@ function removeElement(nums: number[], val: number): number {
 // Solution 1:
 
 function removeElement(nums: number[], val: number): number {
+  let n: number = nums.length;
+  let i: number = 0;
+  while (i < n) {
+    if (nums[i] === val) {
+      nums[i] = nums[n - 1];
+      n--;
+    } else {
+      i++;
+    }
+  }
+  return n;
+}
+
+// Solution 2:
+
+function removeElement(nums: number[], val: number): number {
   let k: number = 0;
   for (let i = 0; i < nums.length; i++) {
     if (nums[i] !== val) {
@@ -62,7 +78,7 @@ function removeElement(nums: number[], val: number): number {
   return k;
 }
 
-// Solution 2:
+// Solution 3:
 
 function removeElement(nums: number[], val: number): number {
   for (let i = 0; i < nums.length; i++) {
@@ -74,7 +90,7 @@ function removeElement(nums: number[], val: number): number {
   return nums.length;
 }
 
-// Solution 3:
+// Solution 4:
 
 function removeElement(nums: number[], val: number): number {
   let tempArr: number[] = [];
