@@ -30,16 +30,16 @@ function majorityElement(nums: number[]): number {
 // Solution 1: Boyer-Moore Voting Algorithm
 
 function majorityElement(nums: number[]): number {
-  let res: number = 0;
+  let majorityElementCandidate: number = 0;
   let count: number = 0;
 
-  for (let i = 0; i < nums.length; i++) {
+  for (let num of nums) {
     if (count === 0) {
-      res = nums[i];
+      majorityElementCandidate = num;
     }
-    count += nums[i] === res ? 1 : -1;
+    count += majorityElementCandidate === num ? 1 : -1;
   }
-  return res;
+  return majorityElementCandidate;
 }
 
 // Solution 2: Sorting
