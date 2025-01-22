@@ -45,7 +45,27 @@ Starter code:
  
 */
 
-// Solution 1: Sorting
+// Solution 1: Three pointer
+
+function merge(nums1: number[], m: number, nums2: number[], n: number): void {
+  let last: number = m + n - 1;
+  let i: number = m - 1;
+  let j: number = n - 1;
+
+  while (j >= 0) {
+    if (i >= 0 && nums1[i] > nums2[j]) {
+      nums1[last] = nums1[i];
+      last--;
+      i--;
+    } else {
+      nums1[last] = nums2[j];
+      last--;
+      j--;
+    }
+  }
+}
+
+// Solution 2: Sorting
 
 function merge(nums1: number[], m: number, nums2: number[], n: number): void {
   for (let i = 0; i < n; i++) {
