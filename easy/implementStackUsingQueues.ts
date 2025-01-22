@@ -64,7 +64,35 @@ class MyStack {
 }
 */
 
-// Solution 1: Two queues
+// Solution 1: One queue
+
+class MyStack {
+  queue: typeof Queue;
+  constructor() {
+    this.queue = new Queue();
+  }
+
+  push(x: number): void {
+    this.queue.push(x);
+    for (let i = this.queue.size() - 1; i > 0; i--) {
+      this.queue.push(this.queue.pop());
+    }
+  }
+
+  pop(): number {
+    return this.queue.pop();
+  }
+
+  top(): number {
+    return this.queue.front();
+  }
+
+  empty(): boolean {
+    return this.queue.isEmpty();
+  }
+}
+
+// Solution 2: Two queues
 
 class MyStack {
   q1: typeof Queue;
