@@ -47,7 +47,17 @@ function removeDuplicates(nums: number[]): number {
 };
 */
 
-//Solution 1: Sorting
+// Solution 1: Two pointer
+
+function removeDuplicates(nums: number[]): number {
+  let unique = Array.from(new Set(nums)).sort((a, b) => a - b);
+  for (let i = 0; i < unique.length; i++) {
+    nums[i] = unique[i];
+  }
+  return unique.length;
+}
+
+//Solution 2: Sorted Set
 
 function removeDuplicates(nums: number[]): number {
   let unique = Array.from(new Set(nums)).sort((a, b) => a - b);
