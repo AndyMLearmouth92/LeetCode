@@ -25,6 +25,10 @@ nums is sorted in ascending order.
 
 Starter code:
 
+function search(nums: number[], target: number): number {
+    
+};
+
 */
 
 // Solution: Binary search
