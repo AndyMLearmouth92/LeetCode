@@ -36,18 +36,29 @@ function searchInsert(nums: number[], target: number): number {
 // Solution 1: Binary search
 
 function searchInsert(nums: number[], target: number): number {
-  let l = 0;
-  let r = nums.length - 1;
+  let l: number = 0;
+  let r: number = nums.length - 1;
 
   while (l <= r) {
-    const m = l + Math.floor((r - l) / 2);
+    const m: number = l + Math.floor((r - l) / 2);
     if (nums[m] === target) {
       return m;
-    } else if (nums[m] > target) {
-      r = m - 1;
-    } else {
+    } else if (nums[m] < target) {
       l = m + 1;
+    } else {
+      r = m - 1;
     }
   }
   return l;
+}
+
+// Solution 2: Linear search
+
+function searchInsert(nums: number[], target: number): number {
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] >= target) {
+      return i;
+    }
+  }
+  return nums.length;
 }
