@@ -62,3 +62,10 @@ function searchInsert(nums: number[], target: number): number {
   }
   return nums.length;
 }
+
+// Solution 3: Linear search
+
+function searchInsert(nums: number[], target: number): number {
+  let index: number = nums.findIndex((e) => e >= target);
+  return index !== -1 ? index : nums.length;
+}
