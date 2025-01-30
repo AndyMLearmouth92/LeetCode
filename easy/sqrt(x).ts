@@ -26,6 +26,7 @@ Starter code:
 function mySqrt(x: number): number {
     
 };
+
 */
 
 // Solution 1: Binary search
@@ -47,4 +48,10 @@ function mySqrt(x: number): number {
     }
   }
   return res;
+}
+
+// Solution 2: Methods
+
+function mySqrt(x: number): number {
+  return Math.floor(Math.sqrt(x));
 }
