@@ -55,3 +55,20 @@ function mySqrt(x: number): number {
 function mySqrt(x: number): number {
   return Math.floor(Math.sqrt(x));
 }
+
+// Solution 3: Brute force
+
+function mySqrt(x: number): number {
+  if (x === 0) {
+    return 0;
+  }
+  let res: number = 1;
+
+  for (let i = 1; i <= x; i++) {
+    if (i * i > x) {
+      return res;
+    }
+    res = i;
+  }
+  return res;
+}
