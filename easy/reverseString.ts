@@ -31,3 +31,15 @@ function reverseString(s: string[]): void {
 function reverseString(s: string[]): void {
   s.reverse();
 }
+
+// Solution 2: Two pointer using destructuring
+
+function reverseString(s: string[]): void {
+  let front: number = 0;
+  let back: number = s.length - 1;
+  while (front < back) {
+    [s[front], s[back]] = [s[back], s[front]];
+    front++;
+    back--;
+  }
+}
