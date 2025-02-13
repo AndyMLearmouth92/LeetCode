@@ -43,3 +43,17 @@ function reverseString(s: string[]): void {
     back--;
   }
 }
+
+// Solution 3: Two pointer using a temp variable
+
+function reverseString(s: string[]): void {
+  let front: number = 0;
+  let back: number = s.length - 1;
+  while (front < back) {
+    let temp = s[front];
+    s[front] = s[back];
+    s[back] = temp;
+    front++;
+    back--;
+  }
+}
